@@ -89,7 +89,7 @@ Goal:
 
 <p align="center">
 
-<img src="https://chatgpt.com/backend-api/estuary/content?id=file_00000000b62471fa853b4c58787b6e05&ts=495464&p=fs&cid=1&sig=3d606ab747bf9fbae2280efed7dda7843d70f4bca521cc5477f2386c37e9815a&v=0"/>
+<img src="https://github.com/Sasw2005/Sasw2005/blob/c248725a32b1effc51de19697fe34ec2d687f169/banner.png"/>
 
 </p>
 
