@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+<style>
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing:1px;
+    background-color: #f2f2f2;
+}
+.form-container{
+    width:400px;
+    background-color: white;
+    padding:20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.7);
+}
+
+h2{
+    text-align: center;
+    color: #333;
+}
+
+label{
+    font-weight: bold;
+    display:block;
+   margin-top: 5px;
+}
+input,select,textarea{
+   width : 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+textarea{
+    resize: none;
+}
+.gender{
+    margin-top: 5px;
+}
+.gender input{
+    width: auto;
+}
+.btn{
+    margin-top: 15px;
+    text-align: center;
+}
+
+button{
+    background-color:darkgreen ;
+    color: #f2f2f2;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 5px;
+     
+}
+
+button:hover{
+    background-color: #45a049;
+}
+</style>
+
+
+</head>
+<body>
+    <div class="form-container">
+     <h2>Student Registration Form</h2>
+      <form>
+
+        <label>Full Name</label>
+        <input type="text"placeholder=" Enter Your Name Here">
+
+        <label for="">Email</label>
+        <input type="email" placeholder="Enter Your Mail Here">
+
+        <label for="">Age</label>
+        <input type="number" placeholder="Enter Your Age Here">
+
+         <label for="">Gender</label>
+         <div class="gender">
+            <input type="radio" name="gender">Male
+            <input type="radio" name="gender">Female
+         </div>
+
+         <label for="">Course</label>
+         <select>
+            <option>Select Course</option>
+            <option>Computer Science</option>
+            <option>Information Technology</option>
+            <option>Civil</option>
+            <option>Computer Application</option>
+         </select>
+
+         <label for="">Address</label>
+         <textarea rows="3" placeholder="Enter Your Address"></textarea>
+
+         <div class="btn">
+            <button type="">Submit</button>
+         </div>
+      </form>
+
+    </div>
+</body>
+</html>
