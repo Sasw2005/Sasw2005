@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play store clone</title>
+     <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+           background-color:black;
+            
+        }
+      /*  main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }*/
+        .navbar{
+            width: 100%;
+            height: 80px;
+
+            display: flex;
+            background-color: black;
+            align-items: center;
+            justify-content: space-evenly;
+            border-bottom: 1px solid white;
+            
+        }
+        .logo{
+            margin-right: 700px;
+            cursor: pointer;
+        }
+        .play-store{
+            object-fit: cover;
+            width: 80px ;
+        }
+        
+        .notification{
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+
+        }
+        .notification i{
+            color: white;
+            margin-left: 30px;
+            font-size:xx-large;
+            position: relative;
+            
+        }
+
+        .display{
+            color: white;
+            position: absolute;
+            opacity: 0;
+            background-color: rgb(96,96,96);
+            transition: 0.15s;
+            padding-left: 10px;
+            color: white;
+            padding-right: 10px;
+        }
+        .display:hover{
+            opacity: 1;
+        }
+        .letter{
+            font-size: medium;
+            display: flex;
+            cursor: pointer;
+           
+        }
+        .s{
+            border-radius: 50px;
+            font-size: small;
+            width: 50px;
+        }
+       
+
+        .border{
+    border: 2px solid transparent;
+}
+.border:hover{
+    border: 2px solid whitesmoke;
+    opacity: 1;
+}
+.text_section{
+    height: 80px;
+    padding-left: 10px;
+    background-color: black;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(223, 149, 12);
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.design{
+    position:relative;
+    font-size:large;
+   /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+}
+ .design::after{
+   content: "";
+   position: absolute;
+   /* border-bottom: 2px solid transparent;
+    transition: 0.4s ease-in-out;*/
+    display: block;
+    height: 3px;
+    width: 0%;
+    left: 0%;
+    background-color: cornflowerblue;
+    transition: 0.4s;
+    overflow: hidden;
+}
+p:hover::after{
+    width: 100%;
+      /*  border-bottom: 2px solid cornflowerblue ;*/
+}
+/*.container{
+    height: 100%;
+    width: 100%;
+}*/
+
+.cards{
+    background-color: black;
+    width: 100%;
+    height:400px;
+}
+.card{
+    background-color: rgb(225, 236, 236);
+    position:  absolute;
+    top: 50%;
+    left: 50%;
+   height: 300px;
+    width: 230px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.card1{
+    z-index: 8;
+    transform: translate(-50%,-30%);
+}
+.card2{
+   /* height: 280px;
+    width: 210px;*/
+    background-color: bisque;
+     z-index: 7;
+     transform: translate(-50%,-30%) rotate(-7deg);
+}
+.card2:hover {
+    z-index: 100;
+}
+
+.card3{
+   /* height: 260px;
+    width: 190px;*/
+    background-color: rgb(106, 62, 7);
+     z-index: 6;
+    
+      transform: translate(-50%,-30%) rotate(-14deg);
+
+}
+.card3:hover{
+    z-index: 100;
+}
+
+.card4{
+   /* height: 240px;
+    width: 170px;
+    background-color: rgb(51, 199, 18);*/
+     z-index: 5;
+    
+      transform: translate(-50%,-30%) rotate(-21deg);
+}
+
+.card4:hover{
+     z-index: 100;
+}
+
+.card5{
+   /* height: 240px;
+    width: 170px;
+    background-color: rgb(51, 199, 18);*/
+     z-index: 4;
+    
+      transform: translate(-50%,-30%) rotate(-28deg);
+}
+
+.card5:hover{
+     z-index: 100;
+}
+
+.card6{
+   /* height: 240px;
+    width: 170px;
+    background-color: rgb(51, 199, 18);*/
+     z-index: 3;
+    
+      transform: translate(-50%,-30%) rotate(-30deg);
+}
+
+.card6:hover{
+     z-index: 100;
+}
+
+.card7{
+
+     z-index: 2;
+    
+      transform: translate(-50%,-30%) rotate(-35deg);
+}
+
+.card7:hover{
+     z-index: 100;
+}
+
+.card8{
+     z-index: 1;
+      transform: translate(-50%,-30%) rotate(-40deg);
+}
+
+.card8:hover{
+     z-index: 100;
+}
+
+.image-fitting{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.foot_panel{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    font-size: large;
+    font-weight: bold;
+    background-color:black;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-top: 1px solid white;
+    cursor: pointer;
+
+}
+.blue{
+    color: azure;
+    
+}
+.blue:hover{
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+.games{
+    color: cornflowerblue
+}
+.game-icon i{
+    background-color: cornflowerblue;
+    padding: 5px;
+    border-radius: 60%;
+
+}
+.tag{
+    padding-top: 20px;
+}
+.tag i{
+    color: white;
+    font-size: larger;
+
+}
+.tag i:hover{
+    background-color: cornflowerblue;
+    padding: 5px;
+    border-radius: 60%;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    
+    <div class="navbar">
+
+        <div class="logo border">
+            <img class="play-store" src="play_store.jpg" alt="">
+        </div>
+
+        <div class="notification">
+            <i class="ri-notification-line"></i>
+             <p class="display">Notification</p>
+        </div>
+    
+        <div class="letter">
+          <img class="s outline" src="letter.png" alt="">
+                <p class="display">Saswata Bhattacharya</p>
+        </div>
+    </div>
+
+               <div class="text_section">
+           <p class="design">For you</p>
+           <p  class="design">Top charts</p>
+            <p  class="design">PC</p>
+            <p  class="design">Children</p>
+            <p  class="design">Premium</p>
+            <p  class="design">Categories</p>
+            </div>
+            
+            <div class="cards"> 
+                <div class="card1 card">
+                    <img class="image-fitting" src="halland.jpg" alt="">
+                </div>
+                <div class="card2 card">
+                    <img class="image-fitting" src="jiohotstar.webp" alt="">
+                </div>
+                <div class="card3 card">
+                    <img class="image-fitting" src="swiggy.png" alt="">
+                </div>
+                <div class="card4 card">
+                    <img class="image-fitting" src="instagram.jpg" alt="">
+                </div>
+
+                <div class="card5 card">
+                    <img class="image-fitting" src="spotify.jpg" alt="">
+                </div>
+ 
+                <div class="card6 card">
+                    <img class="image-fitting" src="flipkart2.png" alt="">
+                </div>
+ 
+                <div class="card7 card">
+                    <img class="image-fitting" src="github.jpg" alt="">
+                </div>
+ 
+                <div class="card8 card">
+                    <img class="image-fitting" src="linkedln.webp" alt="">
+                </div>
+            </div>
+
+
+             <div class="foot_panel">
+
+
+              <div class="tag game-icon"> 
+                <i class="ri-gamepad-line"></i>
+                <p class="games">Games</p>
+                </div>
+
+
+              <div class="tag"> 
+                <i class="ri-apps-fill"></i>
+                <p class="blue">Apps</p>
+              </div>
+
+
+              <div class="tag"> 
+                <i class="ri-search-line"></i>
+                <p class="blue">Search</p>
+              </div>
+
+
+              <div class="tag"> 
+                <i class="ri-book-ai-fill"></i>
+                <p class="blue">Books</p>
+              </div>
+
+                <div class="tag"> 
+                <i class="ri-user-fill"></i>
+                <p class="blue">You</p>
+              </div>
+   
+
+            </div>
+    
+
+</body>
+</html>
