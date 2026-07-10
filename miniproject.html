@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        .card{
+            width: 300px;
+            padding: 25px;
+            border-radius: 20px;
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            text-align: center;
+            box-shadow: 5px 5px 5px greenyellow;
+            backdrop-filter: blur 50px;
+            animation: back 3s ease-in-out;
+            transform: scale(1.5);
+           /* transform: rotate(360deg);*/
+        }
+        @keyframes back{
+            from{
+                transform: scale(.1);
+              /*  transform: rotate(0deg);*/
+            }
+            to{
+                transform: scale(1.5);
+               /* transform: rotate(360deg);*/
+            }
+        }
+.btn{
+    color: rgb(255,255,255);
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    background: #ff7a18;
+    transition: .4s;
+}
+.btn:hover{
+    background: #ff3d00;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="card">
+  <h2>Python Course</h2>
+  <p>Learn Python from basic to advanced level.</p>
+  <button class="btn">Start Now</button>
+</div>
+</body>
+</html>
