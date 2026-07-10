@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <style>
+    
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body
+        {
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg,#1e3c72,#a9c1ea);
+        }
+
+        .weather-card
+        {
+            width:350px;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 5px 10px 25px rgba(0,0,0,0.2);
+
+        }
+
+
+        .weather-card h1
+        {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+
+        .search-box
+        {
+            display: flex;
+            gap:10px;
+            margin-bottom: 20px;
+        }
+
+
+        .search-box input
+        {
+
+            flex:1;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-box button
+        {
+            padding: 10px 15px;
+            border: none;
+            background: #1a3b74;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }    
+
+        .search-box button:hover
+        {
+            background: #335491;
+        }
+
+        .weather-info img
+        {
+            width:100px;
+
+        }
+
+        .temp
+        {
+            font-size: 45px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .city
+        {
+
+            font-size: 28px;
+            margin-top: 5px;
+            color: #444;
+
+        }
+
+        .details
+        {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+
+        .details div
+        {
+
+            text-align: center;
+        }
+
+          .details p
+          {
+                margin-top: 5px;
+                color: #555;
+
+          }
+
+
+/* 0ec8c80c20ca111fe07605cedee8ecc5 */
+
+
+
+    </style>
+</head>
+<body>
+  
+    <div class="weather-card">
+
+        <h1>Weather Api</h1>
+
+        <div class="search-box">
+
+            <input type="text" id="cityInput" placeholder="Enter City Name">
+            <button onclick="getWeather()">Search</button>
+
+        </div>
+
+        <div class="weather-info" id="weatherinfo">
+
+            <img src="" id="weathericon">
+            <div class="temp" id="temp">--C</div>
+            <div class="city">Search a City</div>
+
+            <div class="details">
+
+                <div>
+
+                        <h3 id="humidity">--%</h3>
+                        <p>Humidity</p>
+
+                </div>
+
+                <div>
+                    <h3 id="wind">--km/h</h3>
+                    <p>Wind Speed</p>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const apiKey="0ec8c80c20ca111fe07605cedee8ecc5";
+
+        async function getWeather()
+        {
+            const city=document.getElementById("cityInput").value;
+            if (city==="") 
+        {
+            alert ("Please Enter City Name");
+
+            return ;
+        }
+           
+        const url =`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+
+        try
+        {
+
+            const response = await fetch(url);
+            const data = await response.json();
+            
+            console.log(data);
+
+            if (data.cod=="404")
+        {
+            alert ("City not Found");
+            return ;
+        }
+         document.getElementById("temp").innerHTML=Math.round(data.main.temp)+" C";
+            document.getElementById("wind").innerHTML=Math.round(data.wind.speed)+" km/h";
+     document.getElementById("humidity").innerHTML=Math.round(data.main.humidity)+" %";
+
+             const icon=data.weather[0].icon;
+
+              document.getElementById("weathericon").src=`https://openweathermap.org/img/wn/${icon}@2x.png`;
+             
+
+        }
+
+        catch
+        {
+
+            alert ("Catch block hits");
+        }
+        
+        }
+
+    </script>
+
+    
+</body>
+</html>
