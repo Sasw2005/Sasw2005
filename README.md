@@ -65,8 +65,6 @@ Goal:
 
 <img width="49%" src="https://user-images.githubusercontent.com/74038190/219923809-b86dc415-a0c2-4a38-bc88-ad6cf06395a8.gif"/>
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=github_dark&hide_border=true"/>
-
 </p>
 
 <p align="center">
@@ -91,7 +89,7 @@ Goal:
 
 <p align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=Sasw2005&theme=algolia&column=4&margin-w=15&margin-h=15&no-frame=true"/>
+<img src="https://chatgpt.com/backend-api/estuary/content?id=file_00000000b62471fa853b4c58787b6e05&ts=495464&p=fs&cid=1&sig=3d606ab747bf9fbae2280efed7dda7843d70f4bca521cc5477f2386c37e9815a&v=0"/>
 
 </p>
 
@@ -207,7 +205,7 @@ Object Oriented Programming and console applications.
 
 <p align="center">
 
-<img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/github-contribution-grid-snake-dark.svg"/>
+<img src="https://raw.githubusercontent.com/Starshadow0707/Starshadow0707/output/github-contribution-grid-snake-hacker.gif"/>
 
 </p>
 
