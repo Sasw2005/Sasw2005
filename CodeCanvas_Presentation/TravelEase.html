@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TravelEase.com</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Dancing Script CSS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&family=Dancing+Script:wght@400..700&family=Geomini:wght@200..800&display=swap"
+        rel="stylesheet">
+
+    <!--Bootstrap-icon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- font-style css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geomini:wght@200..800&display=swap" rel="stylesheet">
+
+    <!-- Hero-Text css-->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<style>
+    body {
+        font-family: "Geomini", sans-serif;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        padding-top: 100px;
+    }
+
+    .travel_row {
+        justify-content: center;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropbtn {
+        background-color: orange;
+        color: white;
+        padding: 12px 25px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 12px 16px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .santorini_img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        overflow: hidden;
+    }
+
+
+
+    .travel_nav {
+        display: flex;
+    }
+
+    .travel_nav p {
+        align-content: center;
+        font-weight: 700;
+        padding-left: 20px;
+        font-size: 20px;
+    }
+
+    .travel_nav p:hover {
+        cursor: pointer;
+    }
+
+    .travel_img {
+        height: 80px;
+    }
+
+    .info_nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .info_nav p {
+        font-weight: 700;
+        position: relative;
+    }
+
+    .info_nav p {
+        cursor: pointer;
+    }
+
+    .info_nav p::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: #0080bf;
+        left: 0;
+        bottom: -6px;
+        transition: 0.3s;
+    }
+
+    .info_nav p:hover::after {
+        width: 100%;
+    }
+
+    .globe_nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 2px;
+    }
+
+    .globe_icon {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        padding-bottom: 15px;
+    }
+
+    .globe_icon:hover {
+        cursor: pointer;
+    }
+
+    .globe_nav p {
+        padding-left: 10px;
+        font-weight: 600;
+    }
+
+    .dropdown {
+        padding-left: 15px;
+        font: weight 900px;
+        ;
+    }
+
+    .login_div {
+        padding-bottom: 15px;
+    }
+
+    .login_btn {
+        border: 2px solid #0080bf;
+        color: #0080bf;
+        border-radius: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-weight: 700;
+        transition: all 0.3s;
+        background: none;
+    }
+
+    .login_btn:hover {
+        color: white;
+        background-color: #0080bf;
+        transform: translateY(-2px);
+    }
+
+    .santorini_img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        overflow: hidden;
+    }
+
+    .carousel-slider {
+        position: relative;
+        animation: SlideRight 1.5s ease forwards;
+
+    }
+
+    @keyframes SlideRight {
+        from {
+            opacity: 0;
+            transform: translateX(-80px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .hero_text {
+        position: absolute;
+        top: 140px;
+        left: 90px;
+        animation: SlideRight 1.5s ease forwards;
+    }
+
+    .adventure_text {
+        color: whitesmoke;
+        font-family: "Dancing Script", cursive;
+        font-optical-sizing: auto;
+        font-weight: bolder;
+        font-style: normal;
+        font-size: 100px;
+    }
+
+    .explore_text {
+        color: white;
+        font-weight: bolder;
+        font-size: 20px;
+    }
+
+    .hero_text p {
+        color: black;
+        font-weight: 500;
+    }
+
+    .hero_text h1 {
+        font-weight: bolder;
+    }
+
+    .search_bar {
+        width: 80%;
+        height: 100px;
+        background-color: white;
+        position: absolute;
+        bottom: 150px;
+        left: 150px;
+        /* display: flex;
+        justify-content: space-between;
+        align-items: center;*/
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+        animation: SlideLeft 1.5s ease forwards;
+    }
+
+    @keyframes SlideLeft {
+        from {
+            opacity: 0;
+            transform: translateX(80px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .destination,
+    .check_in,
+    .check_out,
+    .guests,
+    .search_btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .destination,
+    .check_in,
+    .check_out {
+        background-color: #fefefe;
+        border-radius: 10px;
+        height: 80px;
+        align-self: center;
+        border: 1px solid #e2e5e9;
+        margin-left: 25px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s;
+    }
+
+    .destination:hover,
+    .check_in:hover,
+    .check_out:hover {
+        transform: translateY(-3px);
+        cursor: pointer;
+    }
+
+    .destination p,
+    .check_in p,
+    .check_out p,
+    .guests p {
+        padding-left: 10px;
+    }
+
+    .search_btn button {
+        color: white;
+        background-color: #0080bf;
+    }
+
+    .search_btn button:hover {
+        color: #0080bf;
+        background-color: white;
+    }
+
+    .search_info {
+        color: black;
+        font-weight: bold;
+    }
+
+    .search-bar {
+        margin-top: 15px;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown li {
+        list-style: none;
+        font-weight: bold;
+        min-width: 100px;
+        min-height: 30px;
+        position: relative;
+        text-align: left;
+    }
+
+    .dropdown li:hover {
+        background-color: #f1f1f1;
+        width: 100%;
+    }
+
+    .guest_content {
+        display: none;
+        position: absolute;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+        cursor: pointer;
+        background-color: white;
+    }
+
+    .dropdown:hover .guest_content {
+        display: block;
+        padding-left: 0;
+    }
+
+    .banner-text {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        letter-spacing: 2px;
+        text-align: center;
+        font-weight: bold;
+        color: #0080bf;
+    }
+
+    .banner-text::before,
+    .banner-text::after {
+        content: "";
+        width: 120px;
+        height: 2px;
+        align-content: center;
+        background-color: #0080bf;
+        transform: translateY(-5px);
+    }
+
+    .destination-text {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        text-align: center;
+        color: black;
+        position: relative;
+    }
+
+    .destination-text h1 {
+        font-family: 'Merriweather', serif;
+        font-weight: 700;
+    }
+
+    .destination-text p {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        color: #696969;
+        font-size: 18px;
+    }
+
+    .tourist-locations {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        position: relative;
+        left: 150px;
+        height: 250px;
+        width: 80%;
+    }
+
+    .image-modification {
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .famous-city {
+        position: relative;
+    }
+
+    .city-text {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        padding-left: 15px;
+    }
+
+    .city-text p {
+        color: white;
+    }
+
+    .city-text span {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .city-text i {
+        color: #fbd455;
+    }
+
+    .position-adjustment {
+        margin-right: 20px;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+        /*box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);*/
+        transition: all 0.3s;
+    }
+
+    .position-adjustment:hover {
+        cursor: pointer;
+        transform: translateY(-6px);
+    }
+
+    .city-img {
+        border-radius: 100px;
+    }
+
+    .btn-destination button {
+        border-radius: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: 1px solid #0080bf;
+        background: none;
+        color: #0080bf;
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+
+    .btn-destination button:hover {
+        background-color: #0080bf;
+        color: white;
+        transform: translateY(-4px);
+    }
+
+    .btn-destination {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .perfect-container {
+        width: 480px;
+        height: 260px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s;
+    }
+
+    .perfect-container:hover {
+        transform: translateY(-6px);
+        cursor: pointer;
+    }
+
+    .perfect-all {
+        justify-content: center;
+        gap: 20px;
+        height: 280px;
+    }
+
+    .image-container {
+        padding: 0 !important;
+        overflow: hidden;
+        height: 260px;
+    }
+
+    .travel-img {
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+        display: block;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+
+    .perfect-title {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .perfect-text {
+        padding-top: 9px;
+    }
+
+    .perfect-text p {
+        color: #696969;
+    }
+
+    .perfect-text i {
+        color: #0080bf;
+        font-weight: bold;
+    }
+
+    .perfect-price {
+        font-weight: bold;
+        font-size: 25px;
+        color: #096668;
+    }
+
+    .perfect-discount {
+        padding: 10px;
+        border: none;
+        border-radius: 15px;
+        background-color: aquamarine;
+    }
+
+    .perfect-booking {
+        border-radius: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: 1px solid #0080bf;
+        background: none;
+        color: #0080bf;
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+
+    .perfect-booking:hover {
+        background-color: #0080bf;
+        color: white;
+        transform: translateY(-1px);
+    }
+
+    .confidence-all,
+    .review-all {
+        height: 150px;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .confidence-container,
+    .review-container {
+        width: 340px;
+        text-align: center;
+        border: 1px solid #0080bf;
+        border-radius: 18px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s;
+
+    }
+
+    .confidence-container:hover {
+        transform: translateY(-6px);
+        cursor: pointer;
+    }
+
+    .confidence-icon,
+    .review-icon {
+        background-color: #e1edfd;
+        text-align: center;
+        align-content: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        font-size: 30px;
+        margin-top: 10px;
+        margin-left: 120px;
+    }
+
+    .confidence-icon i,
+    .review-icon i {
+        color: #0080bf;
+    }
+
+    .confidence-container p {
+        color: black;
+        font-weight: bold;
+    }
+
+    .confidence-container span {
+        color: #696969;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .review-container {
+        width: 450px;
+        height: 150px;
+        position: relative;
+    }
+
+    .review-text {
+        color: #696969;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 1.5;
+        row-gap: 10px;
+        position: absolute;
+        bottom: 5px;
+        left: 25px;
+    }
+
+    .review-name {
+        font-weight: bold;
+        font-size: 14px;
+        display: block;
+        line-height: 1;
+    }
+
+    .review-tour {
+        font-size: 11px;
+        color: #696969;
+        font-weight: 600;
+        padding-top: 0;
+    }
+
+    .review-star {
+        color: #fbd455;
+        font-size: 12px;
+
+    }
+
+
+    .review-info {
+        position: absolute;
+        top: 15px;
+        left: 100px;
+    }
+
+    .review-icon {
+        font-size: 40px;
+        position: absolute;
+        left: 0;
+        margin-left: 25px;
+
+    }
+
+    .review-icon i {
+        vertical-align: top;
+        align-items: center;
+    }
+
+    .quote {
+        font-size: 40px;
+        font-weight: bold;
+        color: #0080bf;
+        line-height: 1;
+        position: absolute;
+        right: 20px;
+        top: 4px;
+    }
+
+    .review-container {
+        border: 1px solid white;
+        background-color: white;
+
+    }
+
+    .review-all {
+        height: 170px;
+    }
+
+
+    .post-adjustment {
+        position: absolute;
+        top: 0;
+        right: 150px;
+        border: 4px solid #0080bf;
+        width: 220px;
+        height: 45px;
+        border-radius: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s;
+    }
+
+    .post-adjustment:hover {
+        background-color: #0080bf;
+        cursor: pointer;
+        transform: translateY(-3px);
+    }
+
+    .post-adjustment p {
+        font-size: 18px;
+        color: #0080bf;
+        font-weight: bold;
+        padding-top: 5px;
+    }
+
+    .post-adjustment p:hover {
+        color: white;
+    }
+
+    .blog-all {
+        height: 150px;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .blog-container {
+        height: 128px;
+        width: 500px;
+        text-align: center;
+        /* display: grid;
+        grid-template-columns: repeat(2,1fr);*/
+        display: flex;
+        border: none;
+        border-radius: 18px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.20);
+        position: relative;
+        transition: all 0.3s;
+        background-color: #F8FAFF;
+    }
+
+    .blog-container:hover {
+        transform: translateY(-6px);
+        cursor: pointer;
+    }
+
+    .blog-container-change {
+        height: 135px;
+        width: 380px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.20);
+    }
+
+    .blog-img {
+        width: 250px;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+    }
+
+    .blog-img-3 {
+        width: 160px;
+    }
+
+    .blog-img img,
+    .blog-img-3 img {
+        width: 100%;
+        height: 130px;
+        border-radius: 30px;
+        padding: 3px;
+        padding-top: 2px;
+        object-fit: cover;
+    }
+
+    .blog-content {
+        position: absolute;
+        right: 0;
+        overflow: hidden;
+        height: 126px;
+    }
+
+    .blog-text,
+    .blog-text-2,
+    .blog-text-3 {
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+        margin-top: 15px;
+        padding-left: 2px;
+        padding-right: 8px;
+    }
+
+    .blog-text-2 {
+        font-size: 13px;
+    }
+
+    .blog-text-3 {
+        font-size: 12px;
+        padding-left: 15px;
+        padding-right: 3px;
+    }
+
+    .blog-text-span,
+    .blog-text-span-2,
+    .blog-text-span-3 {
+        font-size: 9px;
+        color: #696969;
+        padding-left: 7px;
+        padding-right: 5px;
+        font-weight: 500;
+    }
+
+    .blog-text-span-2 {
+        font-size: 10.5px;
+    }
+
+    .blog-text-span-3 {
+        font-size: 8.5px;
+        padding-left: 15px;
+        padding-right: 3px;
+    }
+
+    .blog-read,
+    .blog-read-2,
+    .blog-read-3 {
+        color: #0080bf;
+        font-weight: bold;
+        text-align: start;
+        margin-left: 25px;
+        transition: all 0.3s;
+    }
+
+    .blog-read:hover,
+    .blog-read-2:hover,
+    .blog-read-3:hover {
+        color: #0e628b;
+        transform: scale(1.1);
+    }
+
+    .amazing-trip {
+        margin-top: 60px;
+        height: 170px;
+        position: relative;
+    }
+
+    .destination-heading {
+        color: white;
+        font-size: 30px;
+    }
+
+    .paragraph {
+        color: white;
+        font-weight: 100;
+    }
+
+    .placeholder-section {
+        text-align: center;
+    }
+
+    .envelope-adjust {
+        font-size: 20px;
+        position: absolute;
+        top: 112px;
+        left: 470px;
+    }
+
+    .envelope-adjust i {
+        color: #0080bf;
+    }
+
+    .subscribe-btn {
+        color: black;
+        font-weight: 500;
+        background-color: #fbd455;
+        text-align: center;
+        align-content: center;
+        width: 150px;
+        height: 40px;
+        border-radius: 20px;
+        position: absolute;
+        top: 107px;
+        left: 990px;
+    }
+
+    .subscribe-btn:hover {
+        cursor: pointer;
+        background-color: #e6ba2b;
+    }
+
+    input {
+        width: 700px;
+        height: 40px;
+        border-radius: 25px;
+        border: none;
+    }
+
+    input::placeholder {
+        color: #696969;
+        font-weight: 600;
+        padding-left: 70px;
+    }
+
+    .footer-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-text a {
+        text-decoration: none;
+        font-size: 15px;
+        column-gap: 5px;
+        line-height: 30px;
+        color: white;
+        transition: all 0.1s;
+    }
+
+    .footer-text social-links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .icon-design a div {
+        display: inline-block;
+        text-decoration: none;
+        background-color: white;
+        text-align: center;
+        align-content: center;
+        color: black;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        transition: all 0.3s;
+    }
+
+    .travel-text {
+        color: white;
+    }
+
+    .ease {
+        padding-left: 18px;
+        font-size: 30px;
+    }
+    
+</style>
+
+<body>
+    <!-- Navbar Section -->
+    <div class="container-fluid">
+
+        <div class="row  travel_row  " style=" height:100px;">
+
+            <div class="col-md-2  travel_nav" style="height: 100px;">
+                <img class="travel_img" src="project_image/tour_plane.png" alt="">
+                <p>TravelEase</p>
+            </div>
+
+            <div class="col-md-6  info_nav" style="height: 100px;">
+                <p>Home</p>
+                <p>Destinations</p>
+                <p>Packages</p>
+                <p>Offers</p>
+                <p>AboutUs</p>
+                <p>Contact</p>
+            </div>
+
+            <div class="col-md-2  globe_nav" style="height: 100px;">
+                <div class="globe_icon">
+                    <i class="bi bi-globe"></i>
+                    <p class="pt-3">EN</p>
+                    <i class="bi bi-chevron-down dropdown"></i>
+                </div>
+                <div class="login_div">
+                    <button class="login_btn">Login</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--Slider-->
+    <div id="carouselExampleControls" class="carousel slide carousel-slider" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="object-fit: cover;">
+                <img src="project_image/santorini_new.jpg" class="d-block w-100 santorini_img" alt="...">
+            </div>
+            <div class="carousel-item" style="object-fit: cover;">
+                <img src="project_image/buda.jpg" class="d-block w-100 santorini_img" alt="...">
+            </div>
+            <div class="carousel-item" style="object-fit: cover;">
+                <img src="project_image/venice.jpg" class="d-block w-100 santorini_img" alt="...">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
+
+    <!-- Hero-Section -->
+    <div class="container-fluid">
+        <div class="row container-row">
+            <div class="hero_text">
+                <span class="explore_text">Explore The World</span>
+                <h1>Discover Your Next Adventure <br> <span class="adventure_text">Adventure</span>
+                </h1>
+                <p>Find the best places to stay,eat and explore <br> all over the world</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search-Bar -->
+    <div class="search_bar">
+
+        <div class="destination">
+            <i class="bi bi-geo-alt"></i>
+            <p><span class="search_info">Destination</span> <br> Where are you going ?</p>
+        </div>
+
+        <div class="check_in">
+            <i class="bi bi-calendar-event"></i>
+            <p> <span class="search_info">Check-in</span> <br> Select date</p>
+        </div>
+
+        <div class="check_out">
+            <i class="bi bi-calendar2-event"></i>
+            <p> <span class="search_info">Check-out</span> <br> Select date</p>
+        </div>
+
+        <div class="guests">
+
+            <div class="dropdown">
+                <button class="login_btn guest_btn">Guests</button>
+                <div class="guest_content">
+                    <ul>
+                        <li> 2 Guests</li>
+                        <li> 3 Guests</li>
+                        <li> 5 Guests</li>
+                        <li> Couple</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="search_btn">
+            <div class="login_div search_btn ">
+                <button class="login_btn search-bar"> <i class="bi bi-search"></i> Search</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero-Text-1 -->
+    <div class="hero-text-1">
+        <div class="banner-text">
+            <p class="">Top Destination</p>
+        </div>
+        <div class="destination-text">
+            <h1>Popular Places To Visit</h1>
+            <p>Explore the most loved destinations around the globe</p>
+        </div>
+    </div>
+
+    <!-- Famous-Places -->
+    <div class="tourist-locations">
+
+        <div class="position-adjustment">
+            <div class="famous-city">
+                <div class="city-img">
+                    <img class="image-modification" src="project_image/paris.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="city-text">
+                <p><span>Paris</span> <br> France <br> <i class="bi bi-star-fill"></i> 4.8 (2.4k reviews) </p>
+            </div>
+        </div>
+
+        <div class="position-adjustment">
+            <div class="famous-city">
+                <div class="city-img">
+                    <img class="image-modification" src="project_image/dubai.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="city-text">
+                <p><span>Dubai</span> <br> UAE <br> <i class="bi bi-star-fill"></i> 4.7 (2.1k reviews) </p>
+            </div>
+        </div>
+
+        <div class="position-adjustment">
+            <div class="famous-city">
+                <div class="city-img">
+                    <img class="image-modification" src="project_image/bali.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="city-text">
+                <p><span>Bali</span> <br>Indonesia <br> <i class="bi bi-star-fill"></i> 4.8 (3.2k reviews) </p>
+            </div>
+        </div>
+
+        <div class="position-adjustment">
+            <div class="famous-city">
+                <div class="city-img">
+                    <img class="image-modification" src="project_image/switzerland.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="city-text">
+                <p><span>Switzerland</span> <br> Europe <br> <i class="bi bi-star-fill"></i> 4.9 (4.1k reviews) </p>
+            </div>
+        </div>
+
+        <div class="position-adjustment">
+            <div class="famous-city">
+                <div class="city-img">
+                    <img class="image-modification" src="project_image/tokyo.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="city-text">
+                <p><span>Tokyo</span> <br> Japan <br> <i class="bi bi-star-fill"></i> 4.7 (2.7k reviews) </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- View-->
+    <div class="btn-destination">
+        <button>View All Destinations &#8594; </button>
+    </div>
+
+    <!-- Hero-Text-2 -->
+    <div class="outer-background" style="background-color: #e1edfd; margin-top:10px ;">
+
+        <div class="hero-text-1" style="padding-top: 5px;">
+            <div class="banner-text">
+                <p class="">Best Packages</p>
+            </div>
+            <div class="destination-text">
+                <h1>Choose Your Perfect Trip</h1>
+                <p>Handpicked travel packages for an amazing experiences</p>
+            </div>
+        </div>
+
+        <!--Perfect-Trip-->
+        <div class="container-fluid">
+
+            <div class="row container-row perfect-all">
+
+                <div class="col-md-3 perfect-container" style="background-color:white;">
+                    <div class="row container-row">
+                        <div class="col-md-6 image-container">
+                            <img class="travel-img" src="project_image/greece.jpg" alt="">
+                        </div>
+
+                        <div class="col-md-6 perfect-text">
+                            <span class="perfect-title">Greece Getaway</span>
+                            <p> 5 Days/4 Nights <br></p>
+                            <p><i class="bi bi-buildings"></i> Hotel <i class="bi bi-fork-knife"></i> Meal <i
+                                    class="bi bi-camera-fill"></i> Sightseeing</p>
+                            <p><span class="perfect-price">&#8377; 69,999</span> <del>&#8377; 85,000</del></p>
+                            <button class="perfect-discount">18% Off</button>
+                            <button class="perfect-booking">Book Now &#8594;</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 perfect-container" style="background-color: white;">
+                    <div class="row container-row">
+                        <div class="col-md-6 image-container">
+                            <img class="travel-img" src="project_image/maldives.jpg" alt="">
+                        </div>
+
+                        <div class="col-md-6 perfect-text">
+                            <span class="perfect-title">Maldives Escape</span>
+                            <p> 4 Days/3 Nights <br></p>
+                            <p><i class="bi bi-buildings"></i> Hotel <i class="bi bi-fork-knife"></i> Meal <i
+                                    class="bi bi-camera-fill"></i> Sightseeing</p>
+                            <p><span class="perfect-price">&#8377; 79,999</span> <del>&#8377; 98,000</del></p>
+                            <button class="perfect-discount">18% Off</button>
+                            <button class="perfect-booking">Book Now &#8594;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 perfect-container" style="background-color: white;">
+                    <div class="row container-row">
+                        <div class="col-md-6 image-container">
+                            <img class="travel-img" src="project_image/swiss.jpg" alt="">
+                        </div>
+
+                        <div class="col-md-6 perfect-text">
+                            <span class="perfect-title">Swiss Adventure</span>
+                            <p> 6 Days/5 Nights <br></p>
+                            <p><i class="bi bi-buildings"></i> Hotel <i class="bi bi-fork-knife"></i> Meal <i
+                                    class="bi bi-camera-fill"></i> Sightseeing</p>
+                            <p><span class="perfect-price">&#8377; 89,999</span> <del>&#8377; 1,10,000</del></p>
+                            <button class="perfect-discount">18% Off</button>
+                            <button class="perfect-booking">Book Now &#8594;</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Hero-Text-3-->
+    <div class="hero-text-1">
+        <div class="banner-text">
+            <p class="">WHY CHOOSE US</p>
+        </div>
+        <div class="destination-text">
+            <h1>Travel With Confidence</h1>
+            <p>We make your travel experience simpler,safer and more memorable </p>
+        </div>
+    </div>
+
+    <!-- Travel-Confidence-->
+    <div class="container-fluid">
+        <div class="row container-row confidence-all">
+
+            <div class="col-md-2 confidence-container">
+                <div class="confidence-icon">
+                    <i class="bi bi-airplane-fill"></i>
+                </div>
+                <p>Handpicked Destinations <br>
+                    <span>Only the best experiences for you </span>
+                </p>
+            </div>
+
+            <div class="col-md-2 confidence-container">
+                <div class="confidence-icon">
+                    <i class="bi bi-wallet2"></i></i>
+                </div>
+                <p>Best Price Gurantee <br>
+                    <span>Get the lowest prices always </span>
+                </p>
+            </div>
+
+            <div class="col-md-2 confidence-container">
+                <div class="confidence-icon">
+                    <i class="bi bi-headset"></i>
+                </div>
+                <p>24/7 Customer Support<br>
+                    <span>We are here for you anytime</span>
+                </p>
+            </div>
+
+            <div class="col-md-2 confidence-container">
+                <div class="confidence-icon">
+                    <i class="bi bi-shield-fill-check"></i>
+                </div>
+                <p>Safe And Secure Booking<br>
+                    <span>Your payments are fully protected</span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Hero-Text-4-->
+    <div class="outer-background" style="background-color: #e1edfd; margin-top: 15px;">
+
+        <div class="hero-text-1" style="padding-top: 5px;">
+            <div class="banner-text">
+                <p class="">TRAVELER REVIEWS</p>
+            </div>
+            <div class="destination-text">
+                <h1>What Our Travelers Say</h1>
+                <p>Real experiences,Real happiness</p>
+            </div>
+        </div>
+
+        <!--Review-Section-->
+        <div class="container-fluid">
+
+            <div class="row container-row review-all">
+
+                <div class="col-md-3 review-container">
+
+                    <div class="review-icon">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+
+                    <div class="review-info">
+                        <span class="review-name">Priya Sharma</span>
+                        <span class="review-tour">Visited Switzerland</span> <br>
+                        <span class="review-star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i> <span style="color: black;"> 4.9</span></span>
+                    </div>
+
+                    <div class="quote"><i class="bi bi-chat-quote-fill"></i></div>
+
+                    <p class="review-text">Absolutely amazing experience!Everything was <br>well planned
+                        and the trip was unforgettable</p>
+                </div>
+
+                <div class="col-md-3 review-container">
+                    <div class="review-icon">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+
+                    <div class="review-info">
+                        <span class="review-name">Rahul Mehta</span>
+                        <span class="review-tour">Visited Bali</span> <br>
+                        <span class="review-star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i> <span style="color: black;"> 4.9</span></span>
+                    </div>
+
+                    <div class="quote"><i class="bi bi-chat-quote-fill"></i></div>
+
+                    <p class="review-text">Best trave company I have ever used. <br>Smooth booking and great support
+                        throughout!</p>
+                </div>
+
+                <div class="col-md-3 review-container">
+                    <div class="review-icon">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+
+                    <div class="review-info">
+                        <span class="review-name">Ananya Roy</span>
+                        <span class="review-tour">Visited Paris</span> <br>
+                        <span class="review-star">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i> <span style="color: black;"> 4.9</span></span>
+                    </div>
+
+                    <div class="quote"><i class="bi bi-chat-quote-fill"></i></div>
+
+                    <p class="review-text">A dream come true!Highly recommended<br>for stress-free travel planning.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Hero-Text-5-->
+    <div class="hero-text-1">
+        <div class="banner-text">
+            <p class="">TRAVEL BLOG</p>
+        </div>
+        <div class="destination-text">
+            <h1>Travel Tips And Guides</h1>
+            <div class="post-adjustment">
+                <p>View All Posts <span style="font-weight: bolder;">&#8594;</span></p>
+            </div>
+            <p>Get inspired by your next journey.</p>
+        </div>
+    </div>
+
+    <!-- Blog-Section -->
+    <div class="container-fluid" style="background-color: white; height: 100px;">
+
+        <div class="row container-row blog-all">
+
+            <div class="col-md-6 blog-container ">
+
+                <div class=" blog-img">
+                    <img src="project_image/barca.jpg" alt="">
+                </div>
+
+                <div class="blog-content">
+                    <p class="blog-text">Top 10 Places to Visit in Europe <br>
+                        <span class="blog-text-span">Explore the most beautiful destinations in Europe</span>
+                    </p>
+
+                    <p class="blog-read">Read More &#8594;</p>
+                </div>
+
+            </div>
+
+            <div class="col-md-3 blog-container ">
+                <div class=" blog-img">
+                    <img src="project_image/caribbean.jpg" alt="">
+                </div>
+
+                <div class="blog-content">
+                    <p class="blog-text-2">How to Plan a Budget-Friendly Trip<br>
+                        <span class="blog-text-span-2">Travel the world without breaking the bank</span>
+                    </p>
+
+                    <p class="blog-read-2">Read More &#8594;</p>
+                </div>
+
+            </div>
+
+            <div class="col-md-3 blog-container blog-container-change">
+                <div class=" blog-img-3">
+                    <img src="project_image/bali-temple.jpg" alt="">
+                </div>
+
+                <div class="blog-content">
+                    <p class="blog-text-3">A Complete Travel Guide to Bali<br>
+                        <span class="blog-text-span-3">Everything you need to know before you go</span>
+                    </p>
+
+                    <p class="blog-read-3">Read More &#8594;</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Hero-Text-6-->
+    <div class="hero-text-1 amazing-trip" style="background-color:#609dc6; padding-top: 20px;">
+
+        <div class="destination-text">
+            <h1 class="destination-heading">Let's Make Your Next Trip Amazing!</h1>
+            <p class="paragraph" style="color: white;">Subscribe to our newsletter for the latest travel deals and
+                updates</p>
+        </div>
+
+        <div class="placeholder-section">
+            <input type="email" placeholder="Enter your email address">
+        </div>
+
+        <div class="envelope-adjust">
+            <i class="bi bi-envelope"></i>
+        </div>
+
+        <div class="subscribe-btn">
+            Subscribe
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+
+    <div class="container-fluid">
+
+        <div class="row justify-content-center" style="height: 300px; background-color:#0e1d3c; padding-top: 15px;">
+
+            <div class="col-md-3 footer-text">
+                <p class="travel-text"> <img class="travel_img" src="project_image/tour_plane.png" alt="">
+                    <span class="ease">Travel</span>
+                    <span class="ease" style="padding: 0; color: #0080bf;">Ease</span>
+                </p>
+                <p style="color: white;">Your trusted travel partner for <br>
+                    unforgettable journeys around the world</p>
+            </div>
+
+            <div class="col-md-2 footer-text">
+                <p class="text-white">Quick Links</p>
+                <a href="">Home</a>
+                <a href="">Destinations</a>
+                <a href="">Packages</a>
+                <a href="">Offers</a>
+                <a href="">Blog</a>
+            </div>
+
+            <div class="col-md-2 footer-text">
+                <p class="text-white">Support</p>
+                <a href="">Help Center</a>
+                <a href="">Booking Guide</a>
+                <a href="">Cancellation Policy</a>
+                <a href="">Terms & Conditions</a>
+                <a href="">Privacy Policy</a>
+            </div>
+
+            <div class="col-md-2 footer-text">
+                <p class="text-white">Contact Us</p>
+                <a href=""><i class="bi bi-envelope-at-fill"></i> support@travelease.com</a>
+                <a href=""><i class="bi bi-telephone-fill"></i> + 91 98765 43210</a>
+                <a href=""><i class="bi bi-geo-alt-fill"></i> Kolkata,India</a>
+            </div>
+
+            <div class="col-md-2 icon-design">
+                <p class="text-white">Social Links</p>
+                <a href="">
+                    <div><i class="bi bi-linkedin"></i></div>
+                </a>
+                <a href="">
+                    <div><i class="bi bi-instagram"></i></div>
+                </a>
+                <a href="">
+                    <div><i class="bi bi-youtube"></i></div>
+                </a>
+                <a href="">
+                    <div><i class="bi bi-facebook"></i></div>
+                </a>
+                <a href="">
+                    <div><i class="bi bi-twitter-x"></i></div>
+                </a>
+
+                <a href=""></a>
+                <a href="" class="download-tag"><img src="project_image/apple store.avif" alt="" class="mt-3" id="applestore-id"
+                        style="height: 50px; width: 170px;"></a>
+
+                <a href=""><img src="project_image/google play.avif" alt="" class="mt-3" id="googleplay-id"
+                        style="height: 50px; padding-right: 20px;"></a>
+            </div>
+
+            <div class="col-md-10" style="color:white;">
+                <hr class="text-white footer-end">
+                <p class="text-center" style="font-size: 10px;">@ 2026 TravelEase. All rights reserved.</p>
+
+            </div>
+
+
+        </div>
+
+        <div>
+
+
+            <div class="container-fluid" style="background-color: white; height: 100px;"></div>
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
+</body>
+
+</html>
